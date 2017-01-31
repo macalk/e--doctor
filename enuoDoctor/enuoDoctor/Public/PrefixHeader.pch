@@ -1,0 +1,78 @@
+//
+//  PrefixHeader.pch
+//  enuoDoctor
+//
+//  Created by apple on 16/12/26.
+//  Copyright © 2016年 apple. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeigth [UIScreen mainScreen].bounds.size.height
+#define urlPicture @"http://www.enuo120.com%@"//图片拼接
+#define DocUrl @"http://www.enuo120.com/index.php/app/%@"//URL前缀
+
+
+#import "RootTabBarViewController.h"
+#import "LoginVC.h"
+#import "GuidanceVC.h"
+#import "OrderDetailVC.h"
+#import "ReservationManageVC.h"
+#import "PersonalCenterVC.h"
+#import "MyRewardVC.h"
+#import "DrawMoneyDetailVC.h"
+#import "DrawMoneyDetailCell.h"
+#import "PersonalInformationVC.h"
+#import "SettingVC.h"
+#import "FirstDrawMoneyVC.h"
+#import "ReservationManageView.h"
+#import "OrderCancelReasonView.h"
+#import "ExplicitDiagnosisVC.h"
+#import "NextCheckVC.h"
+#import "InstallmentVC.h"
+#import "TemporaryAppointmentVC.h"
+#import "OneOffPaymentVC.h"
+#import "OrderDetailView.h"
+#import "AppointIllVC.h"
+#import "AppointIllCell.h"
+#import "ChangeLoginPasswordVC.h"
+#import "MyInforCustomVC.h"
+#import "DrawMoneyVC.h"
+#import "DrawMoneyView.h"
+#import "SelectBankCardVC.h"
+#import "DrawingMoneyVC.h"
+
+#import "PersonalCenterModel.h"
+#import "ReservationManageModel.h"
+#import "NextCheckModel.h"
+#import "InstallmentModel.h"
+#import "ExplicitDiagnosisModel.h"
+#import "TemporaryAppointmentModel.h"
+#import "OrderDetailModel.h"
+#import "AppointIllModel.h"
+#import "SelectBankCardModel.h"
+#import "DrawMoneyModel.h"
+#import "DrawMoneyDetailModel.h"
+
+#import <NIMSDK.h>
+#import "UIColor+Extend.h"
+#import "NSDictionary+DeleteNull.h"
+#import "LZTitleView.h"
+#import "LZFiltrateView.h"
+#import "TitleButtomView.h"
+#import "LZDatePickerView.h"
+#import "LZPickerView.h"
+#import "LZQRCodeBtn.h"
+#import "Masonry.h"
+#import "RSAEncryptor.h"
+#import "SDWebImage/UIImageView+WebCache.m"
+#import "BaseRequest.h"
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

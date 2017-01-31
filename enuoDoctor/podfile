@@ -1,0 +1,11 @@
+platform :ios, ‘8.0’ 
+
+target 'enuoDoctor' do
+
+pod 'AFNetworking', '~> 3.0.4'
+pod 'NIMSDK_LITE'
+pod 'NIMKit/Lite'
+pod 'Masonry'
+pod 'SDWebImage', '~>3.8'
+
+end
