@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootTabBarViewController.h"
 #import <NIMSDK.h>
+#import "AFNetworking.h"
 
 @interface AppDelegate ()<UIScrollViewDelegate>
 
@@ -42,9 +43,39 @@
     [self.window makeKeyWindow];
     
     [[NIMSDK sharedSDK] registerWithAppID:@"449d6a0b04eba71fb27db182af4ac7ae"
-                                  cerName:nil];
+                                  cerName:@"com.enuo120"];
+    
+    [self registerAPNs];
+    NIMPushNotificationSetting *setting =  [[[NIMSDK sharedSDK] apnsManager] currentSetting];
 
     return YES;
+}
+
+- (void)registerAPNs
+{
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)])
+    {
+        UIUserNotificationType types = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound |      UIRemoteNotificationTypeAlert;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types
+                                                                                 categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else
+    {
+        UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound |        UIRemoteNotificationTypeBadge;
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
+    }
+}
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [[NIMSDK sharedSDK] updateApnsToken:deviceToken];
+}
+
+//监听APNS回调
+- (void)onReceiveCustomSystemNotification:(NIMCustomSystemNotification *)notification {
+    NSLog(@"1111");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -290,11 +290,18 @@
                                            token:self.model.chat_token
                                       completion:^(NSError *error) {
                                           NSLog(@"error===%@",error);
+//                                          if (error == nil) {
+//                                              [[NIMSDK sharedSDK].userManager notifyForNewMsg:accid];
+//                                          }
                                       }];
     }
     
     [[NSUserDefaults standardUserDefaults]setObject:self.model.photo forKey:@"docPhoto"];
 
+}
+
+- (BOOL)notifyForNewMsg:(NSString *)userId {
+    return YES;
 }
 
 //注册IM账号
@@ -331,6 +338,9 @@
                                        token:token
                                   completion:^(NSError *error) {
                                       NSLog(@"error===%@",error);
+//                                      if (error == nil) {
+//                                          [[NIMSDK sharedSDK].userManager updateNotifyState:YES forUser:accid completion:nil];
+//                                      }
                                   }];
     
 }

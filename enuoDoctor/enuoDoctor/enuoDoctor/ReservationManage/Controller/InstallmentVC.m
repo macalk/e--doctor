@@ -433,7 +433,7 @@
     }else {
         
         model = self.cellDataCountArr[sender.tag-400];
-        model.ybMoney = @"";
+        model.ybMoney = model.appointMoney;
         model.ybYES = NO;
     }
     
@@ -589,6 +589,8 @@
         
         NSString *dnumberStr = [RSAEncryptor encryptString:self.dnumber publicKey:self.publicKey];
         
+        NSLog(@"%@",prepaidArr);
+        
         [self sendOrderRequestWithDnumber:dnumberStr andPayMethod:@"1" andPrice:priceArr andPrepaid:prepaidArr andYueTimeArr:dateArr];
     }
     
@@ -618,6 +620,7 @@
             }
             
         }
+        
         if (![self.yb isEqualToString:@"无"] && model.ybYES == YES ) {
             if ([model.ybMoney isEqualToString:@""] ||[model.ybMoney isEqualToString:@"0"] || model.ybMoney == nil) {
                 [self createAlterViewWithMessage:@"预交金额不能为0" withSureBtn:YES withCancelBtn:nil withDeleteBtn:nil];
