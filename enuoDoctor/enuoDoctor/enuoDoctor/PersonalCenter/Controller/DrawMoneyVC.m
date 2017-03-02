@@ -33,7 +33,6 @@
     [self createView];
     
 }
-
 - (void)createView {
     DrawMoneyView *view = [[DrawMoneyView alloc]init];
     self.drawMoneyView = view;
