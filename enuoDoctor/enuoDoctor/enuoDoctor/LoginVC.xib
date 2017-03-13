@@ -26,6 +26,9 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e诺字母" translatesAutoresizingMaskIntoConstraints="NO" id="OEa-Gk-5a5">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sy0-Wj-HnG">
                     <rect key="frame" x="23" y="186" width="330" height="44"/>
@@ -98,7 +101,7 @@
                             <color key="backgroundColor" red="0.94509803921568625" green="0.97647058823529409" blue="0.96862745098039216" alpha="0.0" colorSpace="calibratedRGB"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.94509803921568625" green="0.97647058823529409" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>

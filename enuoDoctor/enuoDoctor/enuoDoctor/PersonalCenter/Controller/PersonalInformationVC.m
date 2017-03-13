@@ -53,6 +53,7 @@
     self.professionArr = @[@"主任医师",@"副主任医师",@"主治医师",@"医师",@"医士"];
     
     [self requestData];
+    [self createTableView];
     
     
     //取消键盘
@@ -86,6 +87,7 @@
 - (void)createTableView {
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeigth) style:UITableViewStylePlain];
     self.tableView = tableView;
+    tableView.backgroundColor = [UIColor redColor];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.backgroundColor = [UIColor stringTOColor:@"#f4f4f4"];
@@ -130,7 +132,12 @@
     
     if (indexPath.section == 0) {
         cellTitleLabel.text = [NSString stringWithFormat:@"%@",self.cellTitleArr[indexPath.row]];
-        cellTextField.text = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row]];
+        if (self.dataArr.count == 0) {
+            cellTextField.text = @"";
+        }else {
+            cellTextField.text = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row]];
+        }
+        
         if (indexPath.row == 1) {
             cellTextField.delegate = self;
         }
@@ -139,7 +146,11 @@
             cellTextField.delegate = self;
         }
         cellTitleLabel.text = [NSString stringWithFormat:@"%@",self.cellTitleArr[indexPath.row+2]];
-        cellTextField.text = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row+2]];
+        if (self.dataArr.count == 0) {
+            cellTextField.text = @"";
+        }else {
+            cellTextField.text = [NSString stringWithFormat:@"%@",self.dataArr[indexPath.row+2]];
+        }
 
     }
     
@@ -317,7 +328,9 @@
     NSString *phone = dataDic[@"phone"];
     NSString *email = dataDic[@"email"];
     self.dataArr = [NSMutableArray arrayWithObjects:name,sex,professional,phone,email, nil];
-    [self createTableView];
+    
+    
+    [self.tableView reloadData];
 }
 
 - (void)changeInformationRequest {

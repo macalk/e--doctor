@@ -20,6 +20,7 @@
 }
 
 + (id)PersonalCenterModelWithDic:(NSDictionary *)dic {
+    NSLog(@"%@",dic);
     return [[PersonalCenterModel alloc]initWithDic:dic];
 }
 

@@ -3,7 +3,7 @@
 //  ShiGuangJi
 //
 //  Created by luzhen on 16/8/18.
-//  Copyright © 2016年 杭州笑嘻嘻网络科技有限公司. All rights reserved.
+//  Copyright © 2016年 杭州网络科技有限公司. All rights reserved.
 //
 
 #import "TitleButtomView.h"
@@ -121,14 +121,10 @@
         self.lineLabel.frame = CGRectMake(_lineWidth*buttonTag, self.lineLabel.frame.origin.y, _lineWidth, 1);
     }];
     
-    
     self.selectBtn = titleBtn;
     
     titleBtn.selected = YES;
-
 }
-
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

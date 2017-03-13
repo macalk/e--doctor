@@ -253,7 +253,6 @@
                 [self presentViewController:alterController animated:YES completion:nil];
             });
             
-            
         }else {
             VC = VCArr[indexPath.row+3];
             [VC setHidesBottomBarWhenPushed:YES];
@@ -262,8 +261,17 @@
     }
 }
 
+//请求数据
 - (void)requestData {
     NSString *userName = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    NSLog(@"---%@",userName);
+    
+    //如果不存在，就重新登录
+    if ([userName isEqualToString:@""] || [userName integerValue]<0 || userName == nil) {
+        [UIApplication sharedApplication].keyWindow.rootViewController = [LoginVC new];
+        [[NSUserDefaults standardUserDefaults]setObject:nil forKey:@"token"];
+    }
+    
     NSString *urlStr = [NSString stringWithFormat:DocUrl,@"doctor/center"];
     NSDictionary *dic = @{@"username":userName};
     BaseRequest *request = [[BaseRequest alloc]init];
