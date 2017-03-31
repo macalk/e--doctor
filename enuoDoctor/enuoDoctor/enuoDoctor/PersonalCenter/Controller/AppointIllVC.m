@@ -263,7 +263,6 @@
             NSDictionary *dataDic = dataArr[i];
             [self.deskArr addObject:dataDic[@"name"]];
             
-            
             NSMutableArray *illCountArr = [NSMutableArray array];
             
             NSArray *mbListArr = dataDic[@"mb_list"];
@@ -275,7 +274,6 @@
             [self.illArr addObject:illCountArr];
             
         }
-        
         
         [self.tableView reloadData];
     }

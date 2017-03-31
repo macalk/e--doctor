@@ -515,7 +515,6 @@
     } fail:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
-
 }
 - (void)getNewInfoData:(NSDictionary *)dic {
     
